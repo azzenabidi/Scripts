@@ -29,18 +29,23 @@ def main():
    # Loop through text file 
     while line:
         if (len(line)>2):
-            x = line.index(",")
-            y = line.index(" ")    
-                if (x = 0 ):
-                    sheet.cell(row=i, column=1).value = string[0:y-1]
-                    sheet.cell(row=i, column=2).value = string[y+1:len(line)-1]
-                    book.save('saastr_attendees.xlsx')
-                    i = i+1
-                else
-                    sheet.cell(row=j, column=3).value = string[0:y-1]
-                    sheet.cell(row=j, column=4).value = string[y+1:len(line)-1]
-                    book.save('saastr_attendees.xlsx')
-                    j = j+1
+            if(counter == 0):
+                y = line.find(" ")
+                x = 0
+            else:
+                x = line.find(",")
+                y = line.find(" ")
+                  
+            if (x == 0 ):
+                sheet.cell(row=i, column=1).value = line[0:y-1]
+                sheet.cell(row=i, column=2).value = line[y+1:len(line)-1]
+                book.save('saastr_attendees.xlsx')
+                i = i+1
+            else:
+                sheet.cell(row=j, column=3).value = line[0:y-1]
+                sheet.cell(row=j, column=4).value = line[y+1:len(line)-1]
+                book.save('saastr_attendees.xlsx')
+                j = j+1
                     
 
         line = fp.readline()    
