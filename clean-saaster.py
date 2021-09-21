@@ -32,12 +32,12 @@ def main():
         if (len(line)>2):
             if(counter == 0):
                 y = line.find(" ")
-                x = 0
+                x = -1
             else:
                 x = line.find(",")
                 y = line.find(" ")
                   
-            if (x == 0 ):
+            if (x == -1 ):
                 sheet.cell(row=i, column=1).value = line[0:y-1]
                 sheet.cell(row=i, column=2).value = line[y+1:len(line)-1]
                 book.save('saastr_attendees.xlsx')
