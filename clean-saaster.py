@@ -5,7 +5,7 @@ import openpyxl
 
 def main():
     fp = open('saastr.txt', 'r')  
-    fw = open('saastr.txt', 'w')  
+    
     
     line = fp.readline()
     i = 2
@@ -19,7 +19,7 @@ def main():
     # Create & Initialize sheet 
     book = openpyxl.Workbook()
     book.create_sheet('saastr_attendees')
-    sheet = book.get_sheet_by_name('saastr_attendees')
+    sheet = book['saastr_attendees']
     sheet.cell(row=1, column=1).value = "First Name"
     sheet.cell(row=1, column=2).value = "Last Name"
     sheet.cell(row=1, column=3).value = "Role"
@@ -48,10 +48,6 @@ def main():
                 book.save('saastr_attendees.xlsx')
                 j = j+1
                     
-        else:
-            line =""
-            fw.writeline(line)
-        line = fp.readline()    
 
 
 # Call main method
