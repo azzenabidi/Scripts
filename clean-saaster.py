@@ -5,6 +5,7 @@ import openpyxl
 
 def main():
     fp = open('saastr.txt', 'r')  
+    fw = open('saastr.txt', 'w')  
     
     line = fp.readline()
     i = 2
@@ -47,7 +48,9 @@ def main():
                 book.save('saastr_attendees.xlsx')
                 j = j+1
                     
-
+        else:
+            line =""
+            fw.writeline(line)
         line = fp.readline()    
 
 
