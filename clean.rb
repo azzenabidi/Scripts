@@ -7,16 +7,12 @@ firstname=""
 lastname=""
 company=""
 role=""
-File.foreach("saastr.txt").with_index do |line, line_no|
-     if line.length > 3
+File.foreach("saastr.txt") { |line| if line.length>3 
+    puts line 
+end} 
     
-        firtname = line[/^([\w\-]+)/]
-        lastname = line[/(?<=\s).*/]
-        role = line[/^(.+?),/]
-        company = line[/, [\s\S]*$/] 
-        puts firstname+ " "+lastname
-         
-     end    
-     
-     
-end	 
+        #firtname = line[/^([\w\-]+)/]
+        #lastname = line[/(?<=\s).*/]
+        #role = line[/^(.+?),/]
+        #company = line[/, [\s\S]*$/] 
+        
