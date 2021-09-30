@@ -7,7 +7,7 @@ firstname=""
 lastname=""
 company=""
 role=""
-File.foreach("saastr.txt") { |line| if line.length>3 
+File.foreach("batch.txt") { |line| if line.length>3 
     puts line 
 end} 
     
