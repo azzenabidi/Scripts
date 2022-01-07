@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby 
+ 
 require 'thor'
 class Vidmox < Thor
     desc "hello NAME", "say hello to NAME"
